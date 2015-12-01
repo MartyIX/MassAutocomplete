@@ -1,11 +1,11 @@
 {
-  "name": "angular-mass-autocomplete",
+  "name": "angular-mass-autocomplete-fork",
   "version": "0.2.3",
   "description": "Autocomplete for Angular.js applications with a lot to complete",
   "main": "massautocomplete.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hakib/MassAutocomplete"
+    "url": "https://github.com/MartyIX/MassAutocomplete"
   },
   "keywords": [
     "angularjs",
@@ -13,10 +13,10 @@
     "dropdown"
   ],
   "author": "Haki Benita",
-  "homepage": "http://hakib.github.io/MassAutocomplete",
+  "homepage": "https://github.com/MartyIX/MassAutocomplete",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hakib/MassAutocomplete/issues"
+    "url": "https://github.com/MartyIX/MassAutocomplete/issues"
   },
   "devDependencies": {
     "gulp": "~3.8.10",

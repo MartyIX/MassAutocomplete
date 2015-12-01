@@ -7,8 +7,8 @@ angular.module('MassAutoComplete', [])
     scope: { options: '&massAutocomplete' },
     transclude: true,
     template:
-      '<span ng-transclude></span>' +
-      '<div class="ac-container" ng-show="show_autocomplete && results.length > 0" style="position:absolute;">' +
+      '<span ng-class="show_autocomplete && results.length > 0 ? \'ac-container-is-open\' : \'ac-container-is-closed\'" ng-transclude></span>' +
+      '<div class="ac-container" ng-show="show_autocomplete && results.length > 0" style="position:fixed;">' +
         '<ul class="ac-menu">' +
           '<li ng-repeat="result in results" ng-if="$index > 0" ' +
             'class="ac-menu-item" ng-class="$index == selected_index ? \'ac-state-focus\': \'\'">' +
@@ -76,11 +76,10 @@ angular.module('MassAutoComplete', [])
 
       function _position_autocomplete() {
         var rect = current_element[0].getBoundingClientRect(),
-            scrollTop = $document[0].body.scrollTop || $document[0].documentElement.scrollTop || $window.pageYOffset,
             scrollLeft = $document[0].body.scrollLeft || $document[0].documentElement.scrollLeft || $window.pageXOffset,
             container = $scope.container[0];
 
-        container.style.top = rect.top + rect.height + scrollTop + 'px';
+        container.style.top = rect.top + rect.height + 'px';
         container.style.left = rect.left + scrollLeft + 'px';
         container.style.width = rect.width + 'px';
       }
